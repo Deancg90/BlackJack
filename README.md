@@ -2,7 +2,8 @@
 An interactive game of blackjack
 
 This is the first solo project, where I have written the entire project from scratch with little to no resources. This has
-been by far a great learning experience, and a great project to do to get me out of 'tutorial hell'. 
+been by far a great learning experience, and a great project to do to get me out of 'tutorial hell'. It took me around a day
+and a half of writing to get it into a working game.
 
 In this project, I have learnt about: 
 
