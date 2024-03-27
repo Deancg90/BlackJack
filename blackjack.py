@@ -1,5 +1,9 @@
 import random
 
+# Author: Dean Gooch
+# Date: 27/03/2024
+# Description: An interactive game of BlackJack in Python
+
 def user_hand():
     
     # A simple dictionary which gives the face cards values
@@ -20,7 +24,6 @@ def user_hand():
     print("Its your turn!")
     user = input("Please take a card: y/n? ").lower()
 
-    
     while True:
         if user == 'y':
             
@@ -34,7 +37,6 @@ def user_hand():
             # adding the previous set of cards each twist.
             total_sum_of_hand_user = 0
             
-            
             # here we check if the card is a face card (str) or a number (int)
             for i in total_hand:
                 if isinstance(i, int):
@@ -44,8 +46,6 @@ def user_hand():
                 elif total_sum_of_hand_user > 10:
                     face_card_values['A'] = 1
             
-                    
-
             # break out the while loop if we hit 21
             if total_sum_of_hand_user > 21:
                     print(f"oops, you've bust: {total_hand} = {total_sum_of_hand_user}")
@@ -56,7 +56,6 @@ def user_hand():
             
             print(f"{total_hand} = {total_sum_of_hand_user}")
                 
-            
             # Create a new user input
             user2 = input("Twist or stick? ")
             user2 = user2.lower()
@@ -73,7 +72,6 @@ def user_hand():
             break
         else:
             raise ValueError("Woops, it seems like you have entered something other than y or n!")
-
 
 
 def dealer_hand():
@@ -93,7 +91,6 @@ def dealer_hand():
 
     print("Dealers turn!")
 
-    
     while total_sum_of_hand < 21:
         
         random_card = random.choice(card_list)
@@ -108,8 +105,7 @@ def dealer_hand():
             elif isinstance(i, str):
                 total_sum_of_hand += face_card_values.get(i, 0)
             elif total_sum_of_hand > 10:
-                face_card_values['A'] = 1
-                
+                face_card_values['A'] = 1 
         
         if total_sum_of_hand > 21:
             print(f"Dealer Busts on: {total_sum_of_hand}")
@@ -124,7 +120,6 @@ def dealer_hand():
             break
 
         print(total_sum_of_hand)
-
 
 
 def BlackJack():
