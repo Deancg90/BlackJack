@@ -8,10 +8,10 @@ and a half of writing to get it into a working game.
 In this project, I have learnt about: 
 
 1. Global variables, which can be used by everyone, both inside and outside the function, I used this as after doing some
-basic research on how to access these variables to then calculate who has won in the game, this needed to be done in the
+basic research on how to access these variables in the to then calculate who has won in the game, this needed to be done in the
 BlackJack() function.
 
-2. choice() method returns a randomly selected element, this was needed to have the cards chosen to be truely random.
+2. The choice() method returns a randomly selected element, this was needed to have the cards chosen to be truely random.
 
 3. isinstance() function, this returns True if the specified object is of the specified type. In this case, it was
 to check if the card chosen is a face_card_value(str) or a card_list(int). And then i was able to iterate and sum through
