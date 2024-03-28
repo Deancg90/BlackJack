@@ -126,21 +126,30 @@ def BlackJack():
     # Print out the welcome message
     print("Hello, welcome to the game of blackjack, please take a seat!")
 
-    # Call the functions of the user hand and the dealers hand
-    user_hand()
-    dealer_hand()
+    while True:
+        # Call the functions of the user hand and the dealers hand
+        user_hand()
+        dealer_hand()
     
-    # Check which hand wins
-    if  total_sum_of_hand < total_sum_of_hand_user <= 21:
-        print("You Win!")
+        # Check which hand wins
+        if  total_sum_of_hand < total_sum_of_hand_user <= 21:
+            print("You Win!")
+        elif total_sum_of_hand_user < total_sum_of_hand <= 21:
+            print("Dealer Wins!")
+        elif total_sum_of_hand and total_sum_of_hand_user > 21:
+            print("Both bust!")
+        elif total_sum_of_hand_user == total_sum_of_hand:
+            print("Its a tie!")
 
-    elif total_sum_of_hand_user < total_sum_of_hand <= 21:
-        print("Dealer Wins!")
+        # An input statement, which checks if the user wants to keep playing
+        another_go = input("Would you like to go again? y/n ").lower()
 
-    elif total_sum_of_hand and total_sum_of_hand_user > 21:
-        print("Both bust!")
-
-    elif total_sum_of_hand_user == total_sum_of_hand:
-        print("Its a tie!")
+        # Loop to keep the game going
+        if another_go == 'y':
+            continue
+        elif another_go == 'n':
+            break
+        else:
+            raise ValueError("Woops, you entered something other than y or n, please try again...")
 
 BlackJack()
