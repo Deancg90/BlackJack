@@ -1,4 +1,6 @@
 # BlackJack
+
+Date: 27/03/2024
 An interactive game of blackjack
 
 This is the first solo project, where I have written the entire project from scratch with little to no resources. This has
@@ -24,3 +26,6 @@ the knowledge i have gained from writing this game. I gained alot more experienc
 else loops, along with while loops. The future plans for this project is to add a currency system, also get around
 using global variables, as I have had advice on against using these, unless absolutely necessary.
 
+Date: 28/03/2024
+Update: The user will now be prompted if they want to play again. I changed the BlackJack() function, to a while loop. With an 
+input asking if the user would like to play again, this is then checked at the bottom with an if statement.
