@@ -1,4 +1,3 @@
-#BlackJack
 Date: 27/03/2024
 
 This is the first solo project, where I have written the entire project from scratch with little to no resources. 
