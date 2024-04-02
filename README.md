@@ -29,3 +29,11 @@ Update:
 The user will now be prompted if they want to play again. I changed the BlackJack() function, to a while loop. With an input asking if the user would like to play again, this is then checked at the bottom with an if statement.
 
 I have also added the currency feature, this was done with a simple if, elif statement within the BlackJack() function. This checks all the different scenarios and updates the players wallet accordinly. 
+
+
+Date: 02/04/2024
+Update:
+
+Fixed a couple bugs in the code which was causing the bets to calculate incorrectly. I also added a couple more elif statements which handelled if the user busts but the computer gets under 21, resulting in the user losing the bet. 
+
+My plan is to work in the project for a couple more days, fixing any potential bugs and then moving onto the next project :)
