@@ -23,17 +23,24 @@ of if, elif and else loops, along with while loops. The future plans for this pr
 also get around using global variables, as I have had advice on against using these, unless absolutely necessary.
 
 
-Date: 28/03/2024
-Update:
+Update: 28/03/2024
 
 The user will now be prompted if they want to play again. I changed the BlackJack() function, to a while loop. With an input asking if the user would like to play again, this is then checked at the bottom with an if statement.
 
 I have also added the currency feature, this was done with a simple if, elif statement within the BlackJack() function. This checks all the different scenarios and updates the players wallet accordinly. 
 
 
-Date: 02/04/2024
-Update:
+Update: 02/04/2024
 
-Fixed a couple bugs in the code which was causing the bets to calculate incorrectly. I also added a couple more elif statements which handelled if the user busts but the computer gets under 21, resulting in the user losing the bet. 
+1. Fixed a couple bugs in the code which was causing the bets to calculate incorrectly. I also added a couple more elif statements which handelled if the user busts but the computer gets under 21, resulting in the user losing the bet. 
 
-My plan is to work in the project for a couple more days, fixing any potential bugs and then moving onto the next project :)
+
+Update: 03/04/2024
+
+1. Added the Time library, this then slows down the computer responding to each action which is taking place. I noticed it got hard to read when it was the computers turn, so slowed down each action to 2seconds.
+   time.sleep(2) was added to the dealer() function and blackjack() function above the if/elif statements.
+
+2. Fixed a bug which stopped the user being able to bet a different amount when a round ends.
+
+I've made the decision to stop updating this project now, its in a stable and functional state. 
+My plans are to start a new project now (:
