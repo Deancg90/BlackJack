@@ -141,8 +141,8 @@ def BlackJack():
 
         # The user has won
         if total_sum_of_hand < total_sum_of_hand_user <= 21:
-            wallet += bet *2
-            print(f"You Won {bet * 2}!")
+            wallet += bet
+            print(f"You Won {bet}!")
             print(f"Your wallet is updated to {wallet}")
 
         # The Dealer wins
@@ -153,20 +153,25 @@ def BlackJack():
     
         # Both the user & the dealer bust
         elif total_sum_of_hand > 21 and total_sum_of_hand_user > 21:
-            wallet += bet * 2
-            print(f"Both bust, you have won {bet * 2}!")
+            wallet += bet
+            print(f"Both bust, you have won {bet}!")
             print(f"Your wallet is updated to {wallet}")
 
         # The Dealer busts
         elif total_sum_of_hand > 21:
-            wallet += bet * 2
-            print(f"Dealer busts! You have won {bet * 2}")
+            wallet += bet
+            print(f"Dealer busts! You have won {bet}")
+            print(f"Your wallet has been updated to {wallet}")
+
+        elif total_sum_of_hand_user > 21 and total_sum_of_hand < 21:
+            wallet -= bet
+            print(f"oops, Dealer wins! You have lost {bet}")
             print(f"Your wallet has been updated to {wallet}")
     
         # Its a tie
         elif total_sum_of_hand_user == total_sum_of_hand:
-            wallet += bet * 2
-            print(f"Its a tie, you have won {bet * 2}!")
+            wallet += bet
+            print(f"Its a tie, you have won {bet}!")
             print(f"Your wallet is updated to {wallet}")
 
         # An input statement, which checks if the user wants to keep playing
