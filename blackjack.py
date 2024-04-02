@@ -1,4 +1,5 @@
 import random
+import time
 
 # Author: Dean Gooch
 # Date: 27/03/2024
@@ -92,7 +93,9 @@ def dealer_hand():
     print("Dealers turn!")
 
     while total_sum_of_hand < 21:
-        
+
+        # time function delays each dealers action, makes the game more readable
+        time.sleep(2)
         random_card = random.choice(card_list)
         total_hand.append(random_card)
         print(total_hand)
@@ -130,55 +133,64 @@ def BlackJack():
 
     # Print out the welcome message
     print("Hello, welcome to the game of blackjack, please take a seat!")
-    print(f"Your current balance is {wallet}")
-    bet = int(input("how much would you like to bet? "))
-    print(f"You have placed a bet of {bet}")
+    print(f"Your current balance is {wallet} gold")
+    bet = int(input("how much gold would you like to bet? "))
+    print(f"You have placed a bet of {bet} gold")
 
     while True:
         # Call the functions of the user hand and the dealers hand
         user_hand()
         dealer_hand()
+        time.sleep(2)
 
         # The user has won
         if total_sum_of_hand < total_sum_of_hand_user <= 21:
             wallet += bet
-            print(f"You Won {bet}!")
-            print(f"Your wallet is updated to {wallet}")
+            print(f"You Won {bet} gold!")
+            print(f"Your wallet is updated to {wallet} gold")
 
         # The Dealer wins
         elif total_sum_of_hand_user < total_sum_of_hand <= 21:
             wallet -= bet
-            print(f"Dealer Wins, you have lost {bet}!")
-            print(f"Your wallet is updated to {wallet}")
+            print(f"Dealer Wins, you have lost {bet} gold!")
+            print(f"Your wallet is updated to {wallet} gold")
     
         # Both the user & the dealer bust
         elif total_sum_of_hand > 21 and total_sum_of_hand_user > 21:
             wallet += bet
-            print(f"Both bust, you have won {bet}!")
-            print(f"Your wallet is updated to {wallet}")
+            print(f"Both bust, you have won {bet} gold!")
+            print(f"Your wallet is updated to {wallet} gold")
 
         # The Dealer busts
         elif total_sum_of_hand > 21:
             wallet += bet
-            print(f"Dealer busts! You have won {bet}")
-            print(f"Your wallet has been updated to {wallet}")
+            print(f"Dealer busts! You have won {bet} gold")
+            print(f"Your wallet has been updated to {wallet} gold")
 
+        # The user busts & the dealer doesn't
         elif total_sum_of_hand_user > 21 and total_sum_of_hand < 21:
             wallet -= bet
-            print(f"oops, Dealer wins! You have lost {bet}")
-            print(f"Your wallet has been updated to {wallet}")
+            print(f"oops, Dealer wins! You have lost {bet} gold")
+            print(f"Your wallet has been updated to {wallet} gold")
     
         # Its a tie
         elif total_sum_of_hand_user == total_sum_of_hand:
             wallet += bet
-            print(f"Its a tie, you have won {bet}!")
-            print(f"Your wallet is updated to {wallet}")
+            print(f"Its a tie, you have won {bet} gold!")
+            print(f"Your wallet is updated to {wallet} gold")
+
+        # Break the while loop, if users wallet hits 0
+        if wallet <= 0:
+            print("You have no money left!")
+            print("GAME OVER!")
+            break
 
         # An input statement, which checks if the user wants to keep playing
         another_go = input("Would you like to go again? y/n ").lower()
 
         # Loop to keep the game going
         if another_go == 'y':
+            bet = int(input("how much gold would you like to bet? "))
             continue
         elif another_go == 'n':
             break
